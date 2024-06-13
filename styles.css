@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Poppins";
-  src: url("Poppins-Light.woff2") format("woff2");
+  src: url("./fonts/Poppins-Light.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: "Poppins";
-  src: url("Poppins-Regular.woff2") format("woff2");
+  src: url("./fonts/Poppins-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -16,7 +16,7 @@
 
 @font-face {
   font-family: "Poppins";
-  src: url("Poppins-Medium.woff2") format("woff2");
+  src: url("./fonts/Poppins-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -24,7 +24,7 @@
 
 @font-face {
   font-family: "Poppins";
-  src: url("Poppins-SemiBold.woff2") format("woff2");
+  src: url("./fonts/Poppins-SemiBold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -127,3 +127,97 @@ svg * {
   }
 }
 /* Styles normalization end */
+
+:root {
+  --color-dark: #000000;
+  --color-light: #ffffff;
+
+  --header-height: 120px;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--color-light);
+  background-color: var(--color-dark);
+}
+
+a {
+  color: var(--color-light);
+}
+
+/* Utility classes */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.flex-sb-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Utylity classes end */
+
+.header {
+  column-gap: 20px;
+  min-height: var(--header-height);
+  padding-left: 270px;
+  padding-right: 230px;
+  @media (max-width: 1700px) {
+    padding-inline: 100px;
+  }
+  @media (width <= 1024px) {
+    padding-inline: 20px;
+  }
+}
+
+.header-logo {
+  flex-shrink: 0;
+}
+
+.header-menu {
+  column-gap: 17px;
+}
+
+.header-menu-list {
+  column-gap: 17px;
+  flex-wrap: wrap;
+}
+
+.header-menu-link {
+  display: inline-flex;
+  align-items: center;
+  height: var(--header-height);
+  font-size: 21px;
+  font-weight: 400;
+  text-decoration: none;
+  white-space: nowrap;
+  margin-inline: 18px;
+  @media (width <= 1383px) {
+    height: 60px;
+  }
+}
+
+.header-menu-search-button {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: 90px;
+  border: none;
+  background-color: transparent;
+  padding-inline: 30px;
+}
+
+.header-menu-search-image:hover {
+  filter: opacity(75%);
+}
